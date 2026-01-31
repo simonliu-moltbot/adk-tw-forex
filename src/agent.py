@@ -1,7 +1,7 @@
 from google.adk.agents import LlmAgent
 from .tools import get_exchange_rates
 
-def create_agent(model_name: str = "gemini-2.0-flash-exp"):
+def create_agent(model_name: str = "gemini-2.5-flash"):
     """
     Creates the Taiwan Forex Agent.
     """

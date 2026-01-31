@@ -20,7 +20,7 @@ async def main():
         return
 
     # Initialize Agent
-    agent = create_agent(model_name="gemini-2.0-flash-exp")
+    agent = create_agent(model_name="gemini-2.5-flash")
     
     # Initialize Service and Runner
     session_service = InMemorySessionService()
