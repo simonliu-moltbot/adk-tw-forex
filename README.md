@@ -1,42 +1,107 @@
 # Taiwan Forex Bot (匯率小幫手) 🇹🇼
 
-An AI Agent built with Google ADK that provides real-time exchange rates from the Bank of Taiwan (台灣銀行).
+[English](#english) | [繁體中文](#繁體中文)
 
-## Features
-- Check real-time Buying/Selling rates for major currencies (USD, JPY, EUR, etc.).
-- Distinguishes between Cash (現金) and Spot (即期) rates.
-- Conversational interface in Traditional Chinese.
+---
 
-## Setup
+<a name="english"></a>
+## 🇬🇧 English
 
-1. **Clone the repo**
-   ```bash
-   git clone <your-repo-url>
-   cd adk-tw-forex
-   ```
+An AI Agent built with Google ADK (Agent Development Kit) that provides real-time exchange rates from the Bank of Taiwan.
 
-2. **Install Dependencies**
+### Features
+- **Real-time Rates**: Fetches Buying/Selling rates for major currencies (USD, JPY, EUR, etc.).
+- **Rate Types**: Distinguishes between Cash (現金) and Spot (即期) rates.
+- **Bilingual Interface**: The agent communicates in Traditional Chinese, but the project supports standard ADK tooling.
+
+### Prerequisites
+- Python 3.10+
+- Google Cloud Project with Gemini API enabled.
+- `GOOGLE_API_KEY` set in `.env` file.
+
+### Quick Start
+
+1. **Setup Environment**
    ```bash
    pip install -r requirements.txt
+   echo "GOOGLE_API_KEY=your_key_here" > .env
    ```
 
-3. **Set API Key**
-   Create a `.env` file or export the variable:
+2. **Run with Web UI (Recommended)**
+   Using Makefile:
    ```bash
-   export GOOGLE_API_KEY="your-gemini-api-key"
+   make dev
+   ```
+   Or directly with ADK CLI:
+   ```bash
+   adk web .
+   ```
+   Then open `http://localhost:8000` to interact with the agent.
+
+3. **Run with Docker**
+   ```bash
+   make build
+   make run
    ```
 
-## Usage
+4. **Run CLI (Legacy)**
+   ```bash
+   python tw_forex/main.py
+   ```
 
-Run the agent:
-```bash
-python src/main.py
-```
+### Project Structure
+- `tw_forex/`: Agent source code.
+- `Dockerfile`: Production-ready container config.
+- `Makefile`: Shortcut commands for build and run.
 
-### Example Queries
-- "現在日幣匯率多少？" (What is the JPY rate?)
-- "我想去日本玩，要換現金" (I want to go to Japan, need cash.)
-- "美金現在銀行買入價是多少？" (What is the USD buying rate?)
+---
 
-## Data Source
-- Bank of Taiwan Open Data (CSV): `https://rate.bot.com.tw/xrt/flcsv/0/day`
+<a name="繁體中文"></a>
+## 🇹🇼 繁體中文
+
+這是一個使用 Google ADK 構建的 AI 代理，提供台灣銀行即時匯率查詢服務。
+
+### 功能
+- **即時匯率**：查詢主要貨幣（美元、日圓、歐元等）的買入/賣出匯率。
+- **匯率類型**：區分現金匯率（Cash）與即期匯率（Spot）。
+- **中文對話**：專為繁體中文使用者設計的對話介面。
+
+### 系統需求
+- Python 3.10+
+- 已啟用 Gemini API 的 Google Cloud 專案。
+- 在 `.env` 檔案中設定 `GOOGLE_API_KEY`。
+
+### 快速開始
+
+1. **環境設定**
+   ```bash
+   pip install -r requirements.txt
+   echo "GOOGLE_API_KEY=your_key_here" > .env
+   ```
+
+2. **啟動網頁介面（推薦）**
+   使用 Makefile：
+   ```bash
+   make dev
+   ```
+   或直接使用 ADK CLI：
+   ```bash
+   adk web .
+   ```
+   瀏覽器打開 `http://localhost:8000` 即可使用。
+
+3. **使用 Docker 執行**
+   ```bash
+   make build
+   make run
+   ```
+
+4. **執行命令行介面（舊版）**
+   ```bash
+   python tw_forex/main.py
+   ```
+
+### 專案結構
+- `tw_forex/`: 代理程式原始碼。
+- `Dockerfile`: Docker 容器設定檔。
+- `Makefile`: 常用指令集。

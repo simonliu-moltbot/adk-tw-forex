@@ -8,7 +8,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 
 from google.adk.runners import Runner
 from google.adk.services import InMemorySessionService
-from src.agent import create_agent
+from tw_forex.agent import create_agent
 
 async def main():
     load_dotenv()

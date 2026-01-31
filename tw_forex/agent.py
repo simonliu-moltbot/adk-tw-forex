@@ -27,3 +27,6 @@ Rules:
         """,
         tools=[get_exchange_rates]
     )
+
+# Instantiate the agent for ADK Web UI
+agent = create_agent()
